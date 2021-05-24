@@ -1,3 +1,17 @@
-<a href="/auth/kako">카카오 로그인</a>
-<a href="/auth/info">회원정보</a>
 
+
+{% if loginInfo == undefined %}
+    <a href="/login">로그인</a>
+    <a href="auth/kakao">카카오 로그인</a>
+{% else %}
+<a href="/auth/info">회원정보</a>
+<a href="/auth/logout">로그아웃</a>
+<!-- <a href="/auth/kakao/unlink">카카오 탈퇴</a> -->
+{% endif %}
+
+
+{% if msg %}
+<script type="text/javascript">
+    alert("{{msg}}")
+</script>
+{% endif %}
